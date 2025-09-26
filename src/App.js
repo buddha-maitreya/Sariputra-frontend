@@ -15,6 +15,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Ask from './pages/Ask';
 import History from './pages/History';
+import MeditationGuide from './pages/MeditationGuide';
 
 // Article components
 import SocialPracticesBodhisattva from './pages/articles/SocialPracticesBodhisattva';
@@ -139,6 +140,14 @@ function AppContent() {
             element={
               <OptionalAuthRoute>
                 <Ask />
+              </OptionalAuthRoute>
+            }
+          />
+          <Route
+            path="/meditation"
+            element={
+              <OptionalAuthRoute>
+                <MeditationGuide />
               </OptionalAuthRoute>
             }
           />

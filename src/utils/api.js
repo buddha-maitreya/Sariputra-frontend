@@ -41,6 +41,15 @@ export const authAPI = {
   refresh: () => api.post('/auth/refresh'),
 };
 
+// AI API calls
+export const aiAPI = {
+  ask: (questionData) => api.post('/ai/ask', questionData),
+  chat: (message) => api.post('/chat', { message }),
+  generateArticle: (topicData) => api.post('/ai/generate-article', topicData),
+  getMeditation: (preferences) => api.post('/ai/meditation', { preferences }),
+  getHealth: () => api.get('/ai/health'),
+};
+
 // Query API calls
 export const queryAPI = {
   ask: (questionData) => api.post('/queries/ask', questionData),

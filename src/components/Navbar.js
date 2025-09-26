@@ -39,6 +39,7 @@ const Navbar = () => {
       ]
     },
     { name: 'Ask Sariputra', href: '/ask', icon: ChatBubbleLeftRightIcon },
+    { name: 'Meditation Guide', href: '/meditation', icon: HomeIcon },
     { name: 'Blog', href: '/blog', icon: PencilSquareIcon },
     { name: 'References', href: '/references', icon: AcademicCapIcon },
     { name: 'Contact', href: '/contact', icon: PhoneIcon },
@@ -47,6 +48,7 @@ const Navbar = () => {
   const privateNavigation = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
     { name: 'Ask Sariputra', href: '/ask', icon: ChatBubbleLeftRightIcon },
+    { name: 'Meditation Guide', href: '/meditation', icon: HomeIcon },
     { name: 'History', href: '/history', icon: ClockIcon },
   ];
 
