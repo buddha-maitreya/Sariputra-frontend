@@ -51,7 +51,7 @@ const Ask = () => {
             </h1>
             <p className="text-gray-600 mb-8">
               Share your questions about life, relationships, spirituality, or any challenges you're facing. 
-              Receive insights rooted in Buddhist wisdom and philosophy.
+              Receive insights rooted in perfected wisdom and clarity of insight.
             </p>
 
             {!isAuthenticated && (

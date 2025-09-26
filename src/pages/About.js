@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutImage from '../assets/images/sufibuddha.jpg';
 
 const About = () => {
   return (
@@ -8,12 +9,15 @@ const About = () => {
           {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
-              About Sariputra
+              About This Journey
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Named after one of Buddha's principal disciples, Sariputra is your gateway to 
-              exploring the wisdom of Siddhartha Gautama (the historical Buddha) and Maitreya 
-              (the future Buddha) through modern AI technology.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+              Born from a passionate hobby and 15 years of post-enlightenment exploration, this platform 
+              endeavors to distill wisdom and insights from all masters of ageless wisdom from the 
+              beginningless past — offering pure intellect over ritual dogma.
+            </p>
+            <p className="text-lg text-primary-600 font-medium">
+              Truth was never hidden from anyone; only that nobody wants to look.
             </p>
           </div>
 
@@ -22,56 +26,94 @@ const About = () => {
             <div className="bg-white rounded-lg shadow-sm p-8">
               <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Ancient Wisdom, Modern Access
+                A Passion Project
               </h3>
               <p className="text-gray-600">
-                Sariputra bridges the gap between the teachings of Siddhartha and Maitreya and contemporary life. 
-                Our AI-powered platform draws from their profound wisdom to provide 
-                personalized guidance on life's challenges.
+                This platform emerges as a passionate hobby, driven by the recognition that after 
+                enlightenment and years of perfecting that realization, finding distilled, unstained 
+                wisdom and insight to guide others to clarity without dogma or doctrine remains remarkably difficult.
               </p>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-8">
               <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mb-6">
                 <svg className="w-6 h-6 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Personalized Insights
+                Pure Intellect Over Ritual
               </h3>
               <p className="text-gray-600">
-                Whether you're seeking guidance on relationships, career decisions, spiritual growth, 
-                or daily mindfulness, Sariputra offers thoughtful, compassionate responses rooted 
-                in the teachings of Siddhartha and Maitreya.
+                The inspiration behind this initiative is simple: to help awaken others via pure intellect 
+                as opposed to ritual dogma and mere belief. True wisdom transcends sectarian boundaries 
+                and speaks directly to the clear mind seeking understanding.
               </p>
+            </div>
+          </div>
+
+          {/* Personal Story Section */}
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-16">
+            <div className="md:flex">
+              <div className="md:w-1/3">
+                <img 
+                  src={aboutImage} 
+                  alt="Sufi Buddha - Representing the universal wisdom approach" 
+                  className="w-full h-64 md:h-full object-cover"
+                />
+              </div>
+              <div className="md:w-2/3 p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                  The Journey Behind This Platform
+                </h2>
+                <div className="prose max-w-none text-gray-600">
+                  <p className="mb-4 text-lg leading-relaxed">
+                    Fifteen years ago, enlightenment dawned — not as a mystical experience shrouded in mystery, 
+                    but as the simple recognition of what had always been present. The years that followed involved 
+                    the gradual perfection and integration of this understanding into every aspect of life and being.
+                  </p>
+                  <p className="mb-4 leading-relaxed">
+                    Yet in this journey, a striking challenge became apparent: <strong>the profound difficulty 
+                    of finding pure, distilled wisdom free from the accumulated layers of dogma, ritual, and 
+                    institutional doctrine</strong> that so often obscure the original clarity of insight.
+                  </p>
+                  <div className="bg-blue-50 rounded-lg p-6 my-6">
+                    <p className="text-blue-800 italic mb-0">
+                      "I believe that truth was never hidden from anyone — only that nobody wants to look. 
+                      This platform is my attempt to remove the veils that tradition and culture have placed 
+                      over the simple, direct recognition of what is."
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Who Was Sariputra Section */}
           <div className="bg-white rounded-lg shadow-sm p-8 mb-16">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Who Was Sariputra?
+              Why "Sariputra"?
             </h2>
             <div className="prose max-w-none text-gray-600">
               <p className="mb-4">
-                Sariputra (Sanskrit: Śāriputra) was one of the Buddha's two chief disciples, 
-                renowned for his exceptional wisdom and analytical mind. Born as Upatissa in ancient India, 
-                he became known as Sariputra (son of Sari) after his mother.
+                Sariputra (Sanskrit: Śāriputra) was one of history's most renowned wisdom keepers, 
+                celebrated for his exceptional analytical mind and ability to distill complex spiritual 
+                concepts into clear, practical guidance that could be immediately understood and applied.
               </p>
               <p className="mb-4">
-                He was celebrated for his ability to explain complex dharma concepts clearly and 
-                systematically, making Buddhist teachings accessible to people from all walks of life. 
-                His methodical approach to wisdom and his compassionate teaching style inspire our 
-                platform's mission.
+                He became synonymous with <strong>wisdom without pretense</strong> — the rare ability 
+                to cut through conceptual complexity and point directly to the heart of truth. His 
+                methodical, intellectual approach to understanding perfectly embodies this platform's mission.
               </p>
               <p>
-                Just as Sariputra helped countless individuals understand the path to enlightenment, 
-                our platform aims to make ancient wisdom accessible and relevant to modern seekers.
+                Just as Sariputra helped countless individuals navigate life's deepest questions through 
+                pure insight rather than ritual observance, this platform aims to make the collective 
+                wisdom of all masters throughout history accessible through clarity of understanding rather 
+                than adherence to any particular tradition or practice.
               </p>
             </div>
           </div>
@@ -84,33 +126,33 @@ const About = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Ask Questions</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Direct Inquiry</h3>
               <p className="text-gray-600 text-sm">
-                Submit your questions and receive thoughtful responses based on the wisdom of Siddhartha and Maitreya
+                Ask questions and receive clear, direct responses free from dogmatic interpretations or prescribed practices
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Track Progress</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Wisdom Articles</h3>
               <p className="text-gray-600 text-sm">
-                Review your wisdom journey and see how insights evolve over time
+                Explore curated insights from masters of ageless wisdom, distilled into clear understanding
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Practice Mindfulness</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Pure Understanding</h3>
               <p className="text-gray-600 text-sm">
-                Integrate the teachings of Siddhartha and Maitreya into daily life with practical guidance
+                Receive guidance based on direct recognition rather than belief systems or cultural traditions
               </p>
             </div>
           </div>
@@ -118,11 +160,11 @@ const About = () => {
           {/* Call to Action */}
           <div className="text-center bg-primary-50 rounded-lg p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Begin Your Wisdom Journey
+              Begin Your Journey of Understanding
             </h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Whether you're new to the teachings of Siddhartha and Maitreya or a seasoned practitioner, 
-              Sariputra offers insights tailored to your unique path.
+              Whether you're new to contemplating life's deeper questions or have been seeking truth for years, 
+              this platform offers direct pointers to clarity without the baggage of tradition or doctrine.
             </p>
             <div className="flex justify-center space-x-4">
               <a
@@ -132,10 +174,10 @@ const About = () => {
                 Ask a Question
               </a>
               <a
-                href="/register"
+                href="/articles"
                 className="border border-primary-600 text-primary-600 hover:bg-primary-50 font-semibold py-3 px-6 rounded-lg transition duration-300"
               >
-                Create Account
+                Explore Articles
               </a>
             </div>
           </div>

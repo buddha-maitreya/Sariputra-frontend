@@ -5,12 +5,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
       {/* Hero Section */}
-      <div className="relative h-screen min-h-96">
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+      <div className="relative">
+        <div className="absolute inset-0 bg-black/20 z-10"></div>
         <img 
           src={heroImage} 
           alt="Zen Mind - A contemplative scene representing timeless wisdom" 
-          className="w-full h-full object-cover object-center opacity-90"
+          className="w-full h-96 object-cover opacity-90"
         />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center max-w-4xl mx-auto px-4">
@@ -41,8 +41,6 @@ const Home = () => {
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        {/* Features Preview */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">
             <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

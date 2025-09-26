@@ -9,8 +9,10 @@ import {
   ClockIcon,
   UserCircleIcon,
   InformationCircleIcon,
-  SparklesIcon,
-  PhoneIcon
+  PhoneIcon,
+  BookOpenIcon,
+  PencilSquareIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline';
 
 const Navbar = () => {
@@ -23,8 +25,22 @@ const Navbar = () => {
   const publicNavigation = [
     { name: 'Home', href: '/', icon: HomeIcon },
     { name: 'About', href: '/about', icon: InformationCircleIcon },
-    { name: 'Features', href: '/features', icon: SparklesIcon },
+    { 
+      name: 'Articles', 
+      href: '/articles', 
+      icon: BookOpenIcon,
+      submenu: [
+        { name: 'Masters & Mystics', href: '/articles/masters-mystics' },
+        { name: 'Philosophy', href: '/articles/philosophy' },
+        { name: 'Spirituality', href: '/articles/spirituality' },
+        { name: 'Bodhisattva Path', href: '/articles/bodhisattva-path' },
+        { name: 'Religion', href: '/articles/religion' },
+        { name: 'Management', href: '/articles/management' }
+      ]
+    },
     { name: 'Ask Sariputra', href: '/ask', icon: ChatBubbleLeftRightIcon },
+    { name: 'Blog', href: '/blog', icon: PencilSquareIcon },
+    { name: 'References', href: '/references', icon: AcademicCapIcon },
     { name: 'Contact', href: '/contact', icon: PhoneIcon },
   ];
 
