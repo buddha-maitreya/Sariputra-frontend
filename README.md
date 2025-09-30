@@ -1,13 +1,13 @@
 # Sariputra Frontend 🕉️
 
-**Wisdom from the Teachings of Siddhartha Gautama and Maitreya**
+**Wisdom from Ageless Teachings**
 
-This is the frontend React application for Sariputra, a wisdom-seeking platform based on the profound teachings of Siddhartha Gautama (the historical Buddha) and Maitreya (the future Buddha).
+This is the frontend React application for Sariputra, a wisdom-seeking platform based on ageless wisdom and profound teachings from masters of wisdom since the beginningless past.
 
 ## ✨ Features
 
 - 🎯 **Ask Questions**: Submit questions and receive wisdom-based guidance
-- 🕉️ **Spiritual Wisdom**: Responses rooted in the teachings of Siddhartha and Maitreya
+- 🕉️ **Spiritual Wisdom**: Responses rooted in ageless wisdom
 - 📱 **Responsive Design**: Beautiful, mobile-first interface
 - 🔐 **User Authentication**: Account creation and secure login
 - 📚 **Question History**: Track your spiritual journey over time
@@ -114,7 +114,7 @@ src/
 
 ## 🕉️ About Sariputra
 
-Sariputra was one of Buddha's principal disciples, renowned for his wisdom and ability to explain complex dharma concepts clearly. This application honors his legacy by making the profound teachings of Siddhartha Gautama and Maitreya accessible to modern seekers.
+Sariputra was one of Buddha's principal disciples, renowned for his wisdom and ability to explain complex dharma concepts clearly. This application honors his legacy by making ageless wisdom and profound teachings from masters of wisdom since the beginningless past accessible to modern seekers.
 
 ## 🔗 Related Repositories
 
@@ -130,4 +130,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-*"The mind is everything. What you think you become." - Siddhartha Gautama*
+*"The mind is everything. What you think you become." - Ancient Wisdom*
