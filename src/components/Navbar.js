@@ -49,6 +49,7 @@ const Navbar = () => {
         { name: 'Critique of Contemporary Society', href: '/critique/contemporary-society' }
       ]
     },
+    { name: 'Contact', href: '/contact', icon: PhoneIcon },
   ];
 
   const privateNavigation = [
