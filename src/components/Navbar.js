@@ -31,24 +31,28 @@ const Navbar = () => {
       icon: BookOpenIcon,
       submenu: [
         { name: 'Masters & Mystics', href: '/articles/masters-mystics' },
+        { name: 'Management', href: '/articles/management' },
         { name: 'Philosophy', href: '/articles/philosophy' },
-        { name: 'Spirituality', href: '/articles/spirituality' },
-        { name: 'Bodhisattva Path', href: '/articles/bodhisattva-path' },
         { name: 'Religion', href: '/articles/religion' },
-        { name: 'Management', href: '/articles/management' }
+        { name: 'Bodhisattva Path', href: '/articles/bodhisattva-path' },
+        { name: 'Spirituality', href: '/articles/spirituality' }
       ]
     },
-    { name: 'Ask Sariputra', href: '/ask', icon: ChatBubbleLeftRightIcon },
-    { name: 'Meditation Guide', href: '/meditation', icon: HomeIcon },
-    { name: 'Blog', href: '/blog', icon: PencilSquareIcon },
-    { name: 'References', href: '/references', icon: AcademicCapIcon },
-    { name: 'Contact', href: '/contact', icon: PhoneIcon },
+    { 
+      name: 'Critique', 
+      href: '/critique', 
+      icon: AcademicCapIcon,
+      submenu: [
+        { name: "The Devil's Dictionary", href: '/critique/devils-dictionary' },
+        { name: 'H.L. Mencken Corner', href: '/critique/mencken-corner' },
+        { name: "Philosopher's Stone", href: '/critique/philosophers-stone' },
+        { name: 'Critique of Contemporary Society', href: '/critique/contemporary-society' }
+      ]
+    },
   ];
 
   const privateNavigation = [
     { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
-    { name: 'Ask Sariputra', href: '/ask', icon: ChatBubbleLeftRightIcon },
-    { name: 'Meditation Guide', href: '/meditation', icon: HomeIcon },
     { name: 'History', href: '/history', icon: ClockIcon },
   ];
 

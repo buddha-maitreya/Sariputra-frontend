@@ -7,15 +7,28 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Features from './pages/Features';
 import Contact from './pages/Contact';
-import Articles from './pages/Articles';
+import Articles from './components/Articles';
+import Critique from './components/Critique';
 import Blog from './pages/Blog';
 import References from './pages/References';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import Ask from './pages/Ask';
 import History from './pages/History';
-import MeditationGuide from './pages/MeditationGuide';
+
+// New Articles subpages
+import MastersMystics from './components/MastersMystics';
+import Management from './components/Management';
+import Philosophy from './components/Philosophy';
+import Religion from './components/Religion';
+import BodhisattvaPath from './components/BodhisattvaPath';
+import Spirituality from './components/Spirituality';
+
+// New Critique subpages
+import DevilsDictionary from './components/DevilsDictionary';
+import MenckenCorner from './components/MenckenCorner';
+import PhilosophersStone from './components/PhilosophersStone';
+import ContemporarySociety from './components/ContemporarySociety';
 
 // Article components
 import SocialPracticesBodhisattva from './pages/articles/SocialPracticesBodhisattva';
@@ -100,7 +113,22 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/features" element={<Features />} />
+          
+          {/* New Articles and Critique Routes */}
           <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/masters-mystics" element={<MastersMystics />} />
+          <Route path="/articles/management" element={<Management />} />
+          <Route path="/articles/philosophy" element={<Philosophy />} />
+          <Route path="/articles/religion" element={<Religion />} />
+          <Route path="/articles/bodhisattva-path" element={<BodhisattvaPath />} />
+          <Route path="/articles/spirituality" element={<Spirituality />} />
+          
+          <Route path="/critique" element={<Critique />} />
+          <Route path="/critique/devils-dictionary" element={<DevilsDictionary />} />
+          <Route path="/critique/mencken-corner" element={<MenckenCorner />} />
+          <Route path="/critique/philosophers-stone" element={<PhilosophersStone />} />
+          <Route path="/critique/contemporary-society" element={<ContemporarySociety />} />
+          
           <Route path="/blog" element={<Blog />} />
           <Route path="/references" element={<References />} />
           <Route path="/contact" element={<Contact />} />
@@ -135,22 +163,6 @@ function AppContent() {
           <Route path="/blog/ai-mirror-self-discovery-enlightenment" element={<AIMirrorSelfDiscoveryEnlightenment />} />
           <Route path="/blog/digital-dharma-teacher-ai-guidance" element={<DigitalDharmaTeacherAIGuidance />} />
           
-          <Route
-            path="/ask"
-            element={
-              <OptionalAuthRoute>
-                <Ask />
-              </OptionalAuthRoute>
-            }
-          />
-          <Route
-            path="/meditation"
-            element={
-              <OptionalAuthRoute>
-                <MeditationGuide />
-              </OptionalAuthRoute>
-            }
-          />
           <Route
             path="/login"
             element={

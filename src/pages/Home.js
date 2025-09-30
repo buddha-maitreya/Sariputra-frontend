@@ -58,12 +58,12 @@ const Home = () => {
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center max-w-4xl mx-auto px-4">
             <h1 className="text-5xl font-bold text-white mb-6 drop-shadow-lg">
-              Welcome to <span className="text-yellow-300">Sariputra</span>
+              Welcome to <span className="text-yellow-300">Sariputra App</span>
             </h1>
             <p className="text-xl text-white mb-8 drop-shadow-md">
               Discover timeless wisdom through AI-powered insights that distill knowledge 
-              from masters and mystics across all traditions. Explore philosophy, spirituality, 
-              management, and life guidance rooted in ageless wisdom from the beginningless past.
+              from masters of wisdom since the beginningless past. Explore philosophy, 
+              management, and life guidance rooted in ancient understanding and clear insight.
             </p>
             <div className="max-w-2xl mx-auto">
               <form onSubmit={handleQuickAsk} className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg">
@@ -122,7 +122,7 @@ const Home = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">Ask Any Question</h3>
-            <p className="text-gray-600">Get wisdom-based guidance on life's challenges, relationships, and spiritual growth from all wisdom traditions.</p>
+            <p className="text-gray-600">Get wisdom-based guidance on life's challenges, relationships, and inner growth from various wisdom traditions.</p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">
@@ -132,7 +132,7 @@ const Home = () => {
               </svg>
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-2">AI-Powered Insights</h3>
-            <p className="text-gray-600">Receive thoughtful responses drawing from masters, mystics, and wisdom keepers across all spiritual traditions.</p>
+            <p className="text-gray-600">Receive thoughtful responses drawing from masters of wisdom and various traditions of knowledge and understanding.</p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">

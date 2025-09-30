@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutImage from '../assets/images/sufibuddha.jpg';
+import aboutImage from '../assets/images/Pensive_Bodhisattva_02.jpg';
 
 const About = () => {
   return (
@@ -12,12 +12,9 @@ const About = () => {
               About This Journey
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
-              Born from a passionate hobby and 15 years of post-enlightenment exploration, this platform 
-              endeavors to distill wisdom and insights from all masters of ageless wisdom from the 
+              Born from a passionate hobby and 15 years of post-awakening exploration, this platform 
+              endeavors to distill wisdom and insights from all masters of wisdom since the 
               beginningless past — offering pure intellect over ritual dogma.
-            </p>
-            <p className="text-lg text-primary-600 font-medium">
-              Truth was never hidden from anyone; only that nobody wants to look.
             </p>
           </div>
 
@@ -34,7 +31,7 @@ const About = () => {
               </h3>
               <p className="text-gray-600">
                 This platform emerges as a passionate hobby, driven by the recognition that after 
-                enlightenment and years of perfecting that realization, finding distilled, unstained 
+                awakening and years of perfecting that realization, finding distilled, unstained 
                 wisdom and insight to guide others to clarity without dogma or doctrine remains remarkably difficult.
               </p>
             </div>
@@ -62,7 +59,7 @@ const About = () => {
               <div className="md:w-1/3">
                 <img 
                   src={aboutImage} 
-                  alt="Sufi Buddha - Representing the universal wisdom approach" 
+                  alt="Pensive Bodhisattva in contemplative meditation" 
                   className="w-full h-64 md:h-full object-cover"
                 />
               </div>
@@ -72,7 +69,7 @@ const About = () => {
                 </h2>
                 <div className="prose max-w-none text-gray-600">
                   <p className="mb-4 text-lg leading-relaxed">
-                    Fifteen years ago, enlightenment dawned — not as a mystical experience shrouded in mystery, 
+                    Fifteen years ago, awakening dawned — not as a mystical experience shrouded in mystery, 
                     but as the simple recognition of what had always been present. The years that followed involved 
                     the gradual perfection and integration of this understanding into every aspect of life and being.
                   </p>
