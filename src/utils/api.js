@@ -59,4 +59,46 @@ export const queryAPI = {
   getPublic: (params) => api.get('/queries/public/recent', { params }),
 };
 
+// Music/Tracks API calls
+export const musicAPI = {
+  // Get all tracks
+  getTracks: (params) => api.get('/tracks', { params }),
+  
+  // Get single track
+  getTrack: (id) => api.get(`/tracks/${id}`),
+  
+  // Upload new track (admin only)
+  uploadTrack: (formData) => api.post('/tracks/upload', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }),
+  
+  // Update track metadata
+  updateTrack: (id, data) => api.put(`/tracks/${id}`, data),
+  
+  // Delete track
+  deleteTrack: (id) => api.delete(`/tracks/${id}`),
+  
+  // Download track (increments download counter)
+  downloadTrack: (id) => api.get(`/tracks/${id}/download`, {
+    responseType: 'blob'
+  }),
+  
+  // Get track download URL
+  getDownloadUrl: (id) => api.get(`/tracks/${id}/download-url`),
+  
+  // Search tracks
+  searchTracks: (query, filters) => api.get('/tracks/search', { 
+    params: { q: query, ...filters } 
+  }),
+  
+  // Get tracks by category/tag
+  getTracksByCategory: (category) => api.get(`/tracks/category/${category}`),
+  
+  // Get featured tracks
+  getFeaturedTracks: () => api.get('/tracks/featured'),
+  
+  // Track analytics
+  getTrackStats: (id) => api.get(`/tracks/${id}/stats`),
+};
+
 export default api;

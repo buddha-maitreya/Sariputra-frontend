@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { trackPageInteraction } from '../utils/analytics';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +19,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Track contact form submission with subject
+    trackPageInteraction.contact.formSubmit(formData.subject);
+    
     // In a real app, you would send this to your backend
     console.log('Contact form submitted:', formData);
     setIsSubmitted(true);
@@ -249,6 +253,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    onClick={() => trackPageInteraction.contact.socialMediaClick('Twitter')}
                   >
                     <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
                       <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
@@ -266,6 +271,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    onClick={() => trackPageInteraction.contact.socialMediaClick('TikTok')}
                   >
                     <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
                       <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -283,6 +289,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    onClick={() => trackPageInteraction.contact.socialMediaClick('Threads')}
                   >
                     <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center">
                       <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -301,6 +308,7 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                    onClick={() => trackPageInteraction.contact.socialMediaClick('Facebook')}
                   >
                     <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                       <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
+import { trackUserInteraction } from '../utils/analytics';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -24,9 +25,13 @@ const Login = () => {
     
     try {
       await login(formData.email, formData.password);
+      // Track successful login
+      trackUserInteraction.login();
       navigate('/dashboard');
     } catch (error) {
       console.error('Login failed:', error);
+      // Track failed login attempt
+      trackUserInteraction.trackEvent('login_failed', 'user_engagement');
     } finally {
       setLoading(false);
     }

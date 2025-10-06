@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
+import { trackUserInteraction } from '../utils/analytics';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -32,9 +33,13 @@ const Register = () => {
     
     try {
       await register(formData.name, formData.email, formData.password);
+      // Track successful registration
+      trackUserInteraction.registration();
       navigate('/dashboard');
     } catch (error) {
       console.error('Registration failed:', error);
+      // Track failed registration attempt
+      trackUserInteraction.trackEvent('registration_failed', 'user_engagement');
     } finally {
       setLoading(false);
     }

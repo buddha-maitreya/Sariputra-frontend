@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './utils/AuthContext';
+import { usePageTracking } from './utils/trackingHooks';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -106,6 +107,9 @@ const PublicRoute = ({ children }) => {
 };
 
 function AppContent() {
+  // Track page views automatically
+  usePageTracking();
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />

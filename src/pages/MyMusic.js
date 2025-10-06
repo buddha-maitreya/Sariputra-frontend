@@ -1,6 +1,116 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { musicAPI } from '../utils/api';
 
 const MyMusic = () => {
+  const [tracks, setTracks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  useEffect(() => {
+    fetchTracks();
+  }, [selectedCategory]);
+
+  const fetchTracks = async () => {
+    try {
+      setLoading(true);
+      const response = selectedCategory === 'all' 
+        ? await musicAPI.getTracks()
+        : await musicAPI.getTracksByCategory(selectedCategory);
+      setTracks(response.data.tracks || response.data);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching tracks:', err);
+      setError('Failed to load tracks. Please try again later.');
+      setTracks([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDownload = async (trackId, title) => {
+    try {
+      const response = await musicAPI.downloadTrack(trackId);
+      
+      // Create download link
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `${title}.mp3`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Download failed:', err);
+      alert('Download failed. Please try again.');
+    }
+  };
+
+  const handleSearch = async () => {
+    if (!searchQuery.trim()) {
+      fetchTracks();
+      return;
+    }
+    
+    try {
+      setLoading(true);
+      const response = await musicAPI.searchTracks(searchQuery);
+      setTracks(response.data.tracks || response.data);
+    } catch (err) {
+      console.error('Search failed:', err);
+      setError('Search failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const categories = [
+    { value: 'all', label: 'All Tracks' },
+    { value: 'spirituality', label: 'Spirituality' },
+    { value: 'politics', label: 'Politics' },
+    { value: 'consciousness', label: 'Consciousness' },
+    { value: 'philosophy', label: 'Philosophy' },
+    { value: 'social-commentary', label: 'Social Commentary' }
+  ];
+
+  const TrackCard = ({ track }) => (
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex-1">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">{track.title}</h3>
+          <p className="text-sm text-gray-600 mb-2">{track.description}</p>
+          <div className="flex flex-wrap gap-2 mb-3">
+            {track.tags && track.tags.map((tag, index) => (
+              <span 
+                key={index}
+                className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="flex items-center text-sm text-gray-500 space-x-4">
+            <span>🕒 {Math.floor(track.duration / 60)}:{String(track.duration % 60).padStart(2, '0')}</span>
+            <span>📥 {track.download_count || 0} downloads</span>
+            <span>📅 {new Date(track.upload_date).toLocaleDateString()}</span>
+          </div>
+        </div>
+        <div className="ml-4">
+          <button
+            onClick={() => handleDownload(track.id, track.title)}
+            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Download</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,20 +220,91 @@ const MyMusic = () => {
           </div>
         </div>
 
-        {/* Track Listing Placeholder */}
+        {/* Track Listings Section */}
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-            Track Listings
-          </h2>
-          <div className="text-center py-12 text-gray-500">
-            <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-            </svg>
-            <p className="text-lg mb-2">Track listings coming soon!</p>
-            <p className="text-sm">
-              In the meantime, visit my YouTube channel to explore my current collection.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4 md:mb-0">
+              My Tracks Collection
+            </h2>
+            
+            {/* Search and Filter Controls */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex items-center space-x-2">
+                <input
+                  type="text"
+                  placeholder="Search tracks..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                />
+                <button
+                  onClick={handleSearch}
+                  className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                >
+                  Search
+                </button>
+              </div>
+              
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+              >
+                {categories.map(cat => (
+                  <option key={cat.value} value={cat.value}>{cat.label}</option>
+                ))}
+              </select>
+            </div>
           </div>
+
+          {/* Loading State */}
+          {loading && (
+            <div className="text-center py-12">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading tracks...</p>
+            </div>
+          )}
+
+          {/* Error State */}
+          {error && (
+            <div className="text-center py-12 text-red-600">
+              <svg className="w-16 h-16 mx-auto mb-4 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <p className="text-lg mb-2">Oops! Something went wrong</p>
+              <p className="text-sm">{error}</p>
+              <button 
+                onClick={fetchTracks}
+                className="mt-4 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+              >
+                Try Again
+              </button>
+            </div>
+          )}
+
+          {/* Tracks List */}
+          {!loading && !error && (
+            <>
+              {tracks.length > 0 ? (
+                <div className="space-y-4">
+                  {tracks.map((track) => (
+                    <TrackCard key={track.id} track={track} />
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-12 text-gray-500">
+                  <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                  </svg>
+                  <p className="text-lg mb-2">No tracks found</p>
+                  <p className="text-sm">
+                    {searchQuery ? 'Try a different search term' : 'Tracks will appear here once uploaded to the database'}
+                  </p>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>

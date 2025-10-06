@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import heroImage from '../assets/images/zenmind.jpg';
+import { trackPageInteraction } from '../utils/analytics';
 
 const Home = () => {
   const [question, setQuestion] = useState('');
@@ -9,6 +10,9 @@ const Home = () => {
   const handleQuickAsk = async (e) => {
     e.preventDefault();
     if (!question.trim()) return;
+
+    // Track the quick question submission
+    trackPageInteraction.home.quickQuestionSubmit(question);
 
     setLoading(true);
     setResponse('');

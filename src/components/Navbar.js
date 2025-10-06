@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
+import { trackUserInteraction } from '../utils/analytics';
 import { 
   Bars3Icon, 
   XMarkIcon, 
@@ -95,6 +96,7 @@ const Navbar = () => {
                         ? 'bg-gradient-to-r from-primary-500 to-purple-600 text-white shadow-lg'
                         : 'bg-gradient-to-r from-gray-50 to-blue-50 text-gray-700 hover:from-primary-100 hover:to-purple-100 hover:text-primary-700 hover:shadow-md border border-gray-200 hover:border-primary-300'
                     }`}
+                    onClick={() => trackUserInteraction.navigation(item.name)}
                   >
                     <Icon className={`h-5 w-5 mr-2 transition-transform duration-300 group-hover:rotate-12 ${
                       isActive(item.href) ? 'text-white' : 'text-primary-600'
@@ -162,7 +164,10 @@ const Navbar = () => {
                         ? 'bg-gradient-to-r from-primary-500 to-purple-600 text-white shadow-lg'
                         : 'text-gray-700 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 hover:text-primary-700'
                     }`}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                      trackUserInteraction.navigation(item.name);
+                      setIsMenuOpen(false);
+                    }}
                   >
                     <Icon className={`h-6 w-6 mr-3 ${
                       isActive(item.href) ? 'text-white' : 'text-primary-600'
