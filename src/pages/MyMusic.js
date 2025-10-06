@@ -1,113 +1,107 @@
-import React, { useState, useEffect } from 'react';
-import { musicAPI } from '../utils/api';
+import React from 'react';
+import { trackPageInteraction } from '../utils/analytics';
 
 const MyMusic = () => {
-  const [tracks, setTracks] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  useEffect(() => {
-    fetchTracks();
-  }, [selectedCategory]);
-
-  const fetchTracks = async () => {
-    try {
-      setLoading(true);
-      const response = selectedCategory === 'all' 
-        ? await musicAPI.getTracks()
-        : await musicAPI.getTracksByCategory(selectedCategory);
-      setTracks(response.data.tracks || response.data);
-      setError(null);
-    } catch (err) {
-      console.error('Error fetching tracks:', err);
-      setError('Failed to load tracks. Please try again later.');
-      setTracks([]);
-    } finally {
-      setLoading(false);
+  // Featured songs from YouTube channel
+  const featuredSongs = [
+    {
+      id: 1,
+      title: "Divine Consciousness",
+      description: "An exploration of higher states of awareness through AI-generated music",
+      category: "Spirituality",
+      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+    },
+    {
+      id: 2,
+      title: "Political Awakening",
+      description: "A commentary on social justice and political consciousness",
+      category: "Politics",
+      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+    },
+    {
+      id: 3,
+      title: "The Philosophy of Being",
+      description: "Deep reflections on existence and the nature of reality",
+      category: "Philosophy",
+      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+    },
+    {
+      id: 4,
+      title: "Mind and Matter",
+      description: "Exploring the relationship between consciousness and physical reality",
+      category: "Consciousness",
+      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+    },
+    {
+      id: 5,
+      title: "Social Commentary",
+      description: "Observations on contemporary society and human behavior",
+      category: "Social Commentary",
+      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+    },
+    {
+      id: 6,
+      title: "Inner Journey",
+      description: "A musical meditation on personal transformation and growth",
+      category: "Spirituality",
+      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
     }
-  };
-
-  const handleDownload = async (trackId, title) => {
-    try {
-      const response = await musicAPI.downloadTrack(trackId);
-      
-      // Create download link
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', `${title}.mp3`);
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      window.URL.revokeObjectURL(url);
-    } catch (err) {
-      console.error('Download failed:', err);
-      alert('Download failed. Please try again.');
-    }
-  };
-
-  const handleSearch = async () => {
-    if (!searchQuery.trim()) {
-      fetchTracks();
-      return;
-    }
-    
-    try {
-      setLoading(true);
-      const response = await musicAPI.searchTracks(searchQuery);
-      setTracks(response.data.tracks || response.data);
-    } catch (err) {
-      console.error('Search failed:', err);
-      setError('Search failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const categories = [
-    { value: 'all', label: 'All Tracks' },
-    { value: 'spirituality', label: 'Spirituality' },
-    { value: 'politics', label: 'Politics' },
-    { value: 'consciousness', label: 'Consciousness' },
-    { value: 'philosophy', label: 'Philosophy' },
-    { value: 'social-commentary', label: 'Social Commentary' }
   ];
 
-  const TrackCard = ({ track }) => (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex-1">
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">{track.title}</h3>
-          <p className="text-sm text-gray-600 mb-2">{track.description}</p>
-          <div className="flex flex-wrap gap-2 mb-3">
-            {track.tags && track.tags.map((tag, index) => (
-              <span 
-                key={index}
-                className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-          <div className="flex items-center text-sm text-gray-500 space-x-4">
-            <span>🕒 {Math.floor(track.duration / 60)}:{String(track.duration % 60).padStart(2, '0')}</span>
-            <span>📥 {track.download_count || 0} downloads</span>
-            <span>📅 {new Date(track.upload_date).toLocaleDateString()}</span>
-          </div>
-        </div>
-        <div className="ml-4">
-          <button
-            onClick={() => handleDownload(track.id, track.title)}
-            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
+  const handleYouTubeClick = (songTitle) => {
+    trackPageInteraction.music.playClick(songTitle);
+  };
+
+  const handleChannelClick = () => {
+    trackPageInteraction.music.playClick('YouTube Channel Visit');
+  };
+
+  const SongCard = ({ song }) => (
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+      <div className="relative group">
+        <img 
+          src={song.thumbnail} 
+          alt={song.title}
+          className="w-full h-48 object-cover"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+          <a
+            href={`https://www.youtube.com/watch?v=${song.videoId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => handleYouTubeClick(song.title)}
+            className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-red-600 text-white p-3 rounded-full hover:bg-red-700"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
             </svg>
-            <span>Download</span>
-          </button>
+          </a>
         </div>
+        <span className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 text-xs rounded-full">
+          {song.category}
+        </span>
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">{song.title}</h3>
+        <p className="text-sm text-gray-600 mb-3">{song.description}</p>
+        <a
+          href={`https://www.youtube.com/watch?v=${song.videoId}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => handleYouTubeClick(song.title)}
+          className="inline-flex items-center text-red-600 hover:text-red-700 font-medium"
+        >
+          <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.455 12 20.455 12 20.455s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          Watch on YouTube
+        </a>
       </div>
     </div>
   );
@@ -179,15 +173,16 @@ const MyMusic = () => {
 
             <div className="text-center mb-8">
               <a 
-                href="https://www.youtube.com/@RasKalki" 
+                href="https://www.youtube.com/RasKalki" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                onClick={handleChannelClick}
                 className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-200"
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.455 12 20.455 12 20.455s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
-                Visit My YouTube Channel
+                Visit My YouTube Channel - RasKalki
               </a>
             </div>
 
@@ -220,91 +215,80 @@ const MyMusic = () => {
           </div>
         </div>
 
-        {/* Track Listings Section */}
+        {/* Featured Songs Section */}
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 md:mb-0">
-              My Tracks Collection
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
+              Featured Songs from My YouTube Channel
             </h2>
-            
-            {/* Search and Filter Controls */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex items-center space-x-2">
-                <input
-                  type="text"
-                  placeholder="Search tracks..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                  className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-                />
-                <button
-                  onClick={handleSearch}
-                  className="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
-                >
-                  Search
-                </button>
-              </div>
-              
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore a selection of my AI-generated music covering spirituality, philosophy, politics, and consciousness. 
+              Click on any song to watch it on YouTube.
+            </p>
+          </div>
+
+          {/* Featured Songs Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {featuredSongs.map((song) => (
+              <SongCard key={song.id} song={song} />
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-lg p-8 text-center">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+              Discover More Music
+            </h3>
+            <p className="text-gray-700 mb-6">
+              Visit my YouTube channel to explore over 100+ AI-generated tracks covering diverse topics 
+              and themes. New music is regularly added to the collection.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="https://www.youtube.com/RasKalki" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={handleChannelClick}
+                className="inline-flex items-center px-6 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-colors duration-200"
               >
-                {categories.map(cat => (
-                  <option key={cat.value} value={cat.value}>{cat.label}</option>
-                ))}
-              </select>
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.455 12 20.455 12 20.455s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Explore Full Channel
+              </a>
+              <a 
+                href="https://www.youtube.com/RasKalki/playlists" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => handleYouTubeClick('Playlists')}
+                className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+                Browse Playlists
+              </a>
             </div>
           </div>
 
-          {/* Loading State */}
-          {loading && (
-            <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-              <p className="text-gray-600">Loading tracks...</p>
-            </div>
-          )}
-
-          {/* Error State */}
-          {error && (
-            <div className="text-center py-12 text-red-600">
-              <svg className="w-16 h-16 mx-auto mb-4 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <p className="text-lg mb-2">Oops! Something went wrong</p>
-              <p className="text-sm">{error}</p>
-              <button 
-                onClick={fetchTracks}
-                className="mt-4 bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
-              >
-                Try Again
-              </button>
-            </div>
-          )}
-
-          {/* Tracks List */}
-          {!loading && !error && (
-            <>
-              {tracks.length > 0 ? (
-                <div className="space-y-4">
-                  {tracks.map((track) => (
-                    <TrackCard key={track.id} track={track} />
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center py-12 text-gray-500">
-                  <svg className="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
-                  </svg>
-                  <p className="text-lg mb-2">No tracks found</p>
-                  <p className="text-sm">
-                    {searchQuery ? 'Try a different search term' : 'Tracks will appear here once uploaded to the database'}
-                  </p>
-                </div>
-              )}
-            </>
-          )}
+          {/* Subscribe Section */}
+          <div className="mt-8 bg-gray-50 rounded-lg p-6 text-center">
+            <h4 className="text-xl font-semibold text-gray-900 mb-2">
+              Stay Updated with New Releases
+            </h4>
+            <p className="text-gray-600 mb-4">
+              Subscribe to my YouTube channel to be notified when new AI-generated music is released.
+            </p>
+            <a 
+              href="https://www.youtube.com/RasKalki?sub_confirmation=1" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={() => handleYouTubeClick('Subscribe')}
+              className="inline-flex items-center px-4 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition-colors duration-200"
+            >
+              🔔 Subscribe for Updates
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -249,7 +249,7 @@ const Contact = () => {
                 
                 <div className="grid grid-cols-2 gap-4">
                   <a
-                    href="https://twitter.com/buddhakamau"
+                    href="https://twitter.com/buddhametteya"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
@@ -262,12 +262,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">Twitter</p>
-                      <p className="text-sm text-gray-600">@buddhakamau</p>
+                      <p className="text-sm text-gray-600">@buddhametteya</p>
                     </div>
                   </a>
 
                   <a
-                    href="https://www.tiktok.com/@buddhakamau"
+                    href="https://www.tiktok.com/@buddhametteya"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
@@ -280,12 +280,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">TikTok</p>
-                      <p className="text-sm text-gray-600">@buddhakamau</p>
+                      <p className="text-sm text-gray-600">@buddhametteya</p>
                     </div>
                   </a>
 
                   <a
-                    href="https://www.threads.net/@buddhakamau"
+                    href="https://www.threads.net/@buddhametteya"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
@@ -299,12 +299,12 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">Threads</p>
-                      <p className="text-sm text-gray-600">@buddhakamau</p>
+                      <p className="text-sm text-gray-600">@buddhametteya</p>
                     </div>
                   </a>
 
                   <a
-                    href="https://www.facebook.com/buddhakamau"
+                    href="https://www.facebook.com/buddhametteya"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
@@ -317,7 +317,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-gray-900">Facebook</p>
-                      <p className="text-sm text-gray-600">@buddhakamau</p>
+                      <p className="text-sm text-gray-600">@buddhametteya</p>
                     </div>
                   </a>
                 </div>
