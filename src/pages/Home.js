@@ -113,6 +113,81 @@ const Home = () => {
       </div>
 
       <div className="container mx-auto px-4 py-16">
+        {/* Development Status & Vision */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="bg-gradient-to-r from-orange-50 to-red-50 border-l-4 border-orange-400 rounded-lg p-8">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <svg className="w-8 h-8 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold text-orange-800 mb-4">
+                  🚧 App Currently in Development
+                </h3>
+                <div className="text-orange-700 space-y-4">
+                  <p>
+                    Welcome to Sariputra App! We're currently in the development stage, building something transformative 
+                    for spreading consciousness among ordinary folk. While we work on completing the full application, 
+                    we encourage you to explore our current content and vision.
+                  </p>
+                  
+                  <div className="bg-white/60 rounded-lg p-6">
+                    <h4 className="font-semibold text-orange-800 mb-3">🎵 Current Content Available:</h4>
+                    <p className="mb-3">
+                      Check out our content on <strong>TikTok</strong> and <strong>YouTube</strong> for current updates! 
+                      We're uploading over 100 music tracks created with AI, featuring content about the contemporary 
+                      world's human condition, consciousness, and transformation.
+                    </p>
+                    <div className="flex flex-wrap gap-3 mt-4">
+                      <a 
+                        href="https://www.youtube.com/@RasKalki" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+                      >
+                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136C4.495 20.455 12 20.455 12 20.455s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                        YouTube
+                      </a>
+                      <a 
+                        href="/my-music" 
+                        className="inline-flex items-center px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+                      >
+                        🎵 My Music Page
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-6">
+                    <h4 className="font-semibold text-green-800 mb-3">🌍 Our Vision for Africa & Beyond:</h4>
+                    <p className="text-green-700">
+                      We're seeking collaboration in building something that can spread consciousness among ordinary people. 
+                      We're already making attempts at using AI to create music discussing the state of mankind. 
+                      <strong> How can we use AI to scale these and other such efforts so that we have a better Africa 
+                      in the next 20 years?</strong>
+                    </p>
+                    <p className="text-green-700 mt-3">
+                      Instead of just complaining about the challenges facing us, let's actually do something about it. 
+                      Join us in this mission of transformation through consciousness, creativity, and collaborative action.
+                    </p>
+                    <div className="mt-4">
+                      <a 
+                        href="/contact" 
+                        className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                      >
+                        🤝 Join the Collaboration
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Features Preview */}
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="text-center p-6 bg-white rounded-lg shadow-sm">

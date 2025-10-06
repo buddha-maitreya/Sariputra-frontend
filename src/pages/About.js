@@ -80,9 +80,12 @@ const About = () => {
                   </p>
                   <div className="bg-blue-50 rounded-lg p-6 my-6">
                     <p className="text-blue-800 italic mb-0">
-                      "I believe that truth was never hidden from anyone — only that nobody wants to look. 
-                      This platform is my attempt to remove the veils that tradition and culture have placed 
-                      over the simple, direct recognition of what is."
+                      "The unexamined life is not worth living... I know that I know nothing, yet in this knowing 
+                      lies the beginning of all wisdom. Truth is not hidden from those who seek it with sincerity, 
+                      but rather obscured by our attachment to what we think we already know."
+                    </p>
+                    <p className="text-blue-600 text-sm mt-3 font-medium">
+                      — Socrates, as recorded by Plato
                     </p>
                   </div>
                 </div>

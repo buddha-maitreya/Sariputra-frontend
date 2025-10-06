@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Features from './pages/Features';
+import MyMusic from './pages/MyMusic';
 import Contact from './pages/Contact';
 import Articles from './components/Articles';
 import Critique from './components/Critique';
@@ -131,6 +132,7 @@ function AppContent() {
           
           <Route path="/blog" element={<Blog />} />
           <Route path="/references" element={<References />} />
+          <Route path="/my-music" element={<MyMusic />} />
           <Route path="/contact" element={<Contact />} />
           
           {/* Article Routes */}
