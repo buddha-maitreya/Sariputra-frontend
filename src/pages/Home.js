@@ -65,7 +65,7 @@ const Home = () => {
               Welcome to <span className="text-yellow-300">Sariputra App</span>
             </h1>
             <p className="text-xl text-white mb-8 drop-shadow-md">
-              Discover timeless wisdom through AI-powered insights that distill knowledge 
+              Discover timeless wisdom through contemplative insights that distill knowledge 
               from masters of wisdom since the beginningless past. Explore philosophy, 
               management, and life guidance rooted in ancient understanding and clear insight.
             </p>
@@ -141,7 +141,7 @@ const Home = () => {
                     <h4 className="font-semibold text-orange-800 mb-3">🎵 Current Content Available:</h4>
                     <p className="mb-3">
                       Check out our content on <strong>TikTok</strong> and <strong>YouTube</strong> for current updates! 
-                      We're uploading over 100 music tracks created with AI, featuring content about the contemporary 
+                      We're uploading over 100 music tracks featuring content about the contemporary 
                       world's human condition, consciousness, and transformation.
                     </p>
                     <div className="flex flex-wrap gap-3 mt-4">
@@ -170,7 +170,7 @@ const Home = () => {
                     <p className="text-green-700">
                       We're seeking collaboration in building something that can spread consciousness among ordinary people. 
                       We're creating music that discusses the state of mankind through contemplative composition. 
-                      <strong> How can we use AI to scale these and other such efforts so that we have a better Africa 
+                      <strong> How can we scale these and other such efforts so that we have a better Africa 
                       in the next 20 years?</strong>
                     </p>
                     <p className="text-green-700 mt-3">

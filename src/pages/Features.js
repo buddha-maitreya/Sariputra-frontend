@@ -87,7 +87,7 @@ const Features = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover how Sariputra can guide you on your journey of wisdom and self-discovery 
-              through advanced AI and the teachings of Siddhartha Gautama and Maitreya.
+              through contemplative wisdom and the teachings of Siddhartha Gautama and Maitreya.
             </p>
           </div>
 
@@ -133,10 +133,10 @@ const Features = () => {
                   <span className="text-2xl font-bold text-secondary-600">2</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  AI Processing
+                  Wisdom Processing
                 </h3>
                 <p className="text-gray-600">
-                  Our AI analyzes your question and draws from the profound wisdom of Siddhartha and Maitreya 
+                  Our system draws from the profound wisdom of Siddhartha and Maitreya 
                   to craft a personalized response.
                 </p>
               </div>
@@ -258,7 +258,7 @@ const Features = () => {
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Join thousands of users who have found guidance, clarity, and wisdom 
-              through our AI-powered teachings of Siddhartha and Maitreya.
+              through our contemplative teachings of Siddhartha and Maitreya.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <a

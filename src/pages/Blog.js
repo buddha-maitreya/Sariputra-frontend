@@ -6,9 +6,9 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: 'AI as a Mirror: Accelerating Self-Discovery on the Path to Enlightenment',
-      slug: 'ai-mirror-self-discovery-enlightenment',
-      excerpt: 'Artificial intelligence can serve as a powerful mirror for self-reflection, helping seekers identify patterns and blind spots that might take years to recognize through traditional practice alone.',
+      title: 'Digital Reflection: Accelerating Self-Discovery on the Path to Enlightenment',
+      slug: 'digital-reflection-self-discovery-enlightenment',
+      excerpt: 'Digital tools can serve as a powerful mirror for self-reflection, helping seekers identify patterns and blind spots that might take years to recognize through traditional practice alone.',
       readTime: '3 min read',
       publishedDate: 'September 26, 2025',
       category: 'Technology & Spirituality',
@@ -16,9 +16,9 @@ const Blog = () => {
     },
     {
       id: 2,
-      title: 'The Digital Dharma Teacher: How AI Guidance Complements Traditional Wisdom',
-      slug: 'digital-dharma-teacher-ai-guidance',
-      excerpt: 'While AI cannot replace the irreplaceable role of an accomplished spiritual friend, it can provide continuous support and personalized guidance that accelerates learning between formal teachings.',
+      title: 'The Digital Dharma Teacher: How Digital Guidance Complements Traditional Wisdom',
+      slug: 'digital-dharma-teacher-guidance',
+      excerpt: 'While digital tools cannot replace the irreplaceable role of an accomplished spiritual friend, they can provide continuous support and personalized guidance that accelerates learning between formal teachings.',
       readTime: '3 min read',
       publishedDate: 'September 26, 2025',
       category: 'Technology & Spirituality',
@@ -99,7 +99,7 @@ const Blog = () => {
           {/* Call to Action */}
           <div className="mt-12 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-8 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Explore AI-Enhanced Wisdom?
+              Ready to Explore Digital Wisdom?
             </h3>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
               Experience firsthand how artificial intelligence can support your spiritual journey. 
