@@ -58,7 +58,7 @@ const DigitalDharmaTeacherAIGuidance = () => {
               vast amounts of wisdom literature and present relevant teachings based on the 
               student's current circumstances. Unlike human teachers who might have expertise 
               in particular traditions, AI can draw from the entire spectrum of spiritual 
-              wisdom—Buddhist sutras, Christian mystics, Sufi poetry, Hindu scriptures—
+              wisdom—sutras from masters of wisdom, Christian mystics, Sufi poetry, Hindu scriptures—
               finding exactly the perspective that resonates with the seeker's present need.
             </p>
 

@@ -68,7 +68,7 @@ const DruckerManagementContemplativeLeadership = () => {
             Drucker's "effective executive" was characterized by five practices: time management, 
             focus on contribution, building on strengths, prioritization, and decision-making 
             effectiveness. The contemplative executive embodies these practices but operates 
-            from a deeper foundation—the cultivation of what Buddhist psychology calls 
+            from a deeper foundation—the cultivation of what masters of wisdom call 
             "clear awareness" or what Christian mystics term "contemplative consciousness."
           </p>
 

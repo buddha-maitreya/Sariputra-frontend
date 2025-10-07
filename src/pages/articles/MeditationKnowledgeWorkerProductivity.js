@@ -139,7 +139,7 @@ const MeditationKnowledgeWorkerProductivity = () => {
           <p>
             Drucker emphasized that effective decision-making requires understanding the 
             problem before seeking solutions. Meditation enhances this capacity by developing 
-            what Buddhist psychology calls "clear seeing"—the ability to perceive situations 
+            what masters of wisdom call "clear seeing"—the ability to perceive situations 
             as they actually are rather than as we fear, hope, or assume them to be.
           </p>
 

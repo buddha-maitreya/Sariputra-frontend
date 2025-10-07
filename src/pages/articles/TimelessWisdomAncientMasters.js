@@ -99,7 +99,7 @@ const TimelessWisdomAncientMasters = () => {
             <p>
               Ancient masters were comfortable with paradox, understanding that ultimate truth often transcends 
               the linear logic of the rational mind. The Taoist concept of wu wei (action through non-action), 
-              the Buddhist middle way, and the mystical traditions of all cultures embrace this paradoxical nature of reality.
+              the middle way of the masters of wisdom, and the mystical traditions of all cultures embrace this paradoxical nature of reality.
             </p>
 
             <h2>Living Wisdom in the Modern Age</h2>

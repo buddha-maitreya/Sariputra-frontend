@@ -35,7 +35,7 @@ const MindfulnessModernLife = () => {
           <p>
             Mindfulness, the practice of present-moment awareness without judgment, has 
             emerged as perhaps the most accessible bridge between ancient spiritual wisdom 
-            and contemporary life. What Buddhist masters cultivated through years of 
+            and contemporary life. What masters of wisdom cultivated through years of 
             retreat practice can now be integrated into commuting, parenting, working, 
             and even waiting in line—transforming every activity into an opportunity 
             for awakening.

@@ -34,7 +34,7 @@ const References = () => {
     },
     {
       id: 2,
-      category: "Buddhist Philosophy & Texts",
+      category: "Masters of Wisdom & Philosophy",
       citations: [
         {
           author: "Maitreya",
@@ -230,7 +230,7 @@ const References = () => {
               </h3>
               <p className="mb-4">
                 Sariputra draws wisdom from primary texts across multiple spiritual and philosophical 
-                traditions, including Buddhist sūtras, Christian mystical writings, Islamic Sufi texts, 
+                traditions, including sutras from masters of wisdom, Christian mystical writings, Islamic Sufi texts, 
                 Hindu philosophical treatises, and contemporary management literature.
               </p>
 

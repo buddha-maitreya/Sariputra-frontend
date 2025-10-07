@@ -45,7 +45,7 @@ const SpiritualityStillnessModernChaos = () => {
 
           <h2>The Ocean of Becoming</h2>
           <p>
-            Buddhist philosophy speaks of bhava-sagar, the ocean of existence or becoming. In this vast 
+            Masters of wisdom speak of bhava-sagar, the ocean of existence or becoming. In this vast 
             ocean, beings are tossed about by the waves of desire, fear, hope, and despair. The tragedy 
             of modern spiritual seeking is that instead of learning to navigate these waters with wisdom, 
             most people exhaust themselves swimming frantically in circles, mistaking frenzied activity 

@@ -6,51 +6,51 @@ const MyMusic = () => {
   const featuredSongs = [
     {
       id: 1,
-      title: "Divine Consciousness",
-      description: "An exploration of higher states of awareness through AI-generated music",
+      title: "Tilt the Graph to God",
+      description: "Conscious Roots Dub - An exploration of higher states of awareness through meditative music composition",
       category: "Spirituality",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+      videoId: "ldqzAQ-RI88", // Actual video from RasKalki channel
+      thumbnail: `https://img.youtube.com/vi/ldqzAQ-RI88/mqdefault.jpg`
     },
     {
       id: 2,
-      title: "Political Awakening",
-      description: "A commentary on social justice and political consciousness",
+      title: "The Full Chant",
+      description: "Militant Dub Roots Vocal - A commentary on social justice and consciousness",
       category: "Politics",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+      videoId: "V1ffKdoMaMo", // Actual video from RasKalki channel
+      thumbnail: `https://img.youtube.com/vi/V1ffKdoMaMo/mqdefault.jpg`
     },
     {
       id: 3,
-      title: "The Philosophy of Being",
-      description: "Deep reflections on existence and the nature of reality",
+      title: "Teach the Light",
+      description: "Roots Dub Meditation - Deep reflections on existence and spiritual practice",
       category: "Philosophy",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+      videoId: "_rJSW318YtU", // Actual video from RasKalki channel
+      thumbnail: `https://img.youtube.com/vi/_rJSW318YtU/mqdefault.jpg`
     },
     {
       id: 4,
-      title: "Mind and Matter",
-      description: "Exploring the relationship between consciousness and physical reality",
+      title: "The Seeker's Code",
+      description: "Dub of Hidden Meanings - Exploring the relationship between consciousness and reality",
       category: "Consciousness",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+      videoId: "xsRA9g4LGq0", // Actual video from RasKalki channel
+      thumbnail: `https://img.youtube.com/vi/xsRA9g4LGq0/mqdefault.jpg`
     },
     {
       id: 5,
-      title: "Social Commentary",
-      description: "Observations on contemporary society and human behavior",
+      title: "The Concentrated Essence",
+      description: "Radio Edit - Observations on contemporary society and human behavior",
       category: "Social Commentary",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+      videoId: "TrqugwuAKyQ", // Actual video from RasKalki channel
+      thumbnail: `https://img.youtube.com/vi/TrqugwuAKyQ/mqdefault.jpg`
     },
     {
       id: 6,
-      title: "Inner Journey",
-      description: "A musical meditation on personal transformation and growth",
+      title: "The Sixfold Crown Dub",
+      description: "A musical meditation on personal transformation and spiritual growth",
       category: "Spirituality",
-      videoId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
-      thumbnail: `https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg`
+      videoId: "J-lS3Fk7i70", // Actual video from RasKalki channel
+      thumbnail: `https://img.youtube.com/vi/J-lS3Fk7i70/mqdefault.jpg`
     }
   ];
 
@@ -114,7 +114,7 @@ const MyMusic = () => {
             My Music
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Exploring the intersection of artificial intelligence and meaningful content creation
+            Exploring the intersection of meditative practice and meaningful content creation
           </p>
         </div>
 
@@ -122,18 +122,18 @@ const MyMusic = () => {
         <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-              A New Passion for AI-Generated Music
+              A New Passion for Meditative Music Composition
             </h2>
             
             <p className="text-gray-700 leading-relaxed mb-6">
-              I have discovered a newfound passion for creating music using artificial intelligence. 
+              I have discovered a newfound passion for creating music through meditative composition and mindful creativity. 
               This journey has opened up incredible possibilities for expressing complex ideas about 
               spirituality, philosophy, and human consciousness through the medium of sound and rhythm.
             </p>
 
             <p className="text-gray-700 leading-relaxed mb-6">
               I am actively seeking collaboration with other like-minded individuals who share a vision 
-              of how AI can be leveraged to create meaningful impact in communities. Together, we can 
+              of how creative expression can be leveraged to create meaningful impact in communities. Together, we can 
               explore how content creation—whether through music, spoken word, or other creative 
               mediums—can serve as a powerful tool to educate the masses and inspire positive transformation.
             </p>
@@ -150,10 +150,10 @@ const MyMusic = () => {
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
               <h4 className="text-lg font-semibold text-blue-900 mb-2">
-                Coming Soon: AI Music Creation App
+                Coming Soon: Meditative Music Creation Platform
               </h4>
               <p className="text-blue-800">
-                I am currently developing an AI-powered application that will enable users to create 
+                I am currently developing a platform that will enable users to create 
                 their own music and spoken poetry focused on spiritual growth and personal development. 
                 This tool will democratize creative expression and make it accessible to anyone seeking 
                 to explore their inner wisdom through artistic creation.
@@ -168,7 +168,7 @@ const MyMusic = () => {
               While I work on organizing and listing all my tracks here on this page, I invite you to 
               explore my current collection on YouTube, where I have already released over 100 tracks. 
               These compositions cover a wide range of topics and represent my ongoing exploration of 
-              AI-assisted creativity in service of higher consciousness and community education.
+              mindful creativity in service of higher consciousness and community education.
             </p>
 
             <div className="text-center mb-8">
@@ -191,10 +191,10 @@ const MyMusic = () => {
             </h3>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              If you are passionate about using AI for creative expression, community education, or 
+              If you are passionate about creative expression for community education, or 
               spiritual development, I would love to connect with you. Whether you're a fellow creator, 
-              developer, educator, or simply someone with innovative ideas about the potential of AI 
-              in service of human consciousness, let's explore how we can work together to make a 
+              developer, educator, or simply someone with innovative ideas about the potential of 
+              mindful creativity in service of human consciousness, let's explore how we can work together to make a 
               meaningful impact.
             </p>
 
@@ -222,7 +222,7 @@ const MyMusic = () => {
               Featured Songs from My YouTube Channel
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Explore a selection of my AI-generated music covering spirituality, philosophy, politics, and consciousness. 
+              Explore a selection of my music covering spirituality, philosophy, politics, and consciousness. 
               Click on any song to watch it on YouTube.
             </p>
           </div>
@@ -240,7 +240,7 @@ const MyMusic = () => {
               Discover More Music
             </h3>
             <p className="text-gray-700 mb-6">
-              Visit my YouTube channel to explore over 100+ AI-generated tracks covering diverse topics 
+              Visit my YouTube channel to explore over 100+ tracks covering diverse topics 
               and themes. New music is regularly added to the collection.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -277,16 +277,16 @@ const MyMusic = () => {
               Stay Updated with New Releases
             </h4>
             <p className="text-gray-600 mb-4">
-              Subscribe to my YouTube channel to be notified when new AI-generated music is released.
+              Subscribe to my YouTube channel to be notified when new music is released.
             </p>
             <a 
-              href="https://www.youtube.com/RasKalki?sub_confirmation=1" 
+              href="https://www.youtube.com/RasKalki" 
               target="_blank" 
               rel="noopener noreferrer"
-              onClick={() => handleYouTubeClick('Subscribe')}
+              onClick={() => handleYouTubeClick('Visit Channel')}
               className="inline-flex items-center px-4 py-2 bg-red-600 text-white font-medium rounded-md hover:bg-red-700 transition-colors duration-200"
             >
-              🔔 Subscribe for Updates
+              🎵 Visit My Channel
             </a>
           </div>
         </div>
